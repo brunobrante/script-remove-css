@@ -16,21 +16,24 @@ def removeUnsedCSS(listCSS,listHTML):
 	listCSSRemove = list(dict.fromkeys(listCSSRemove))
 
 	# Retiro os CSS invalidos dentro da lista de css
-	listCSSKeep = [x for x in listCSS if x not in listCSSRemove]
-	return listCSSKeep
+	#listCSSKeep = [x for x in listCSS if x not in listCSSRemove]
+	return listCSSRemove
 
-def rewriteFile(listCSSKeep, pathCSS): 
+def rewriteFile(listCSSRemove, pathCSS): 
 	# Verifico os CSS validos dentro do arquivo
-	if(listCSSKeep): 
-		f = open(os.path.expanduser(pathCSS), "r+")
+	print(listCSSRemove)
+	if(listCSSRemove): 
+		f = open(os.path.expanduser(pathCSS),'r+')
 		fileCSS = f.read()
+		#print(fileCSS)
 		# Pego todos o css inteiro e salvo dentro do arquivo
-		newCSS = ""
-		for itemCSSKeep in listCSSKeep: 
-			regex = itemCSSKeep + " \{(.|\n)*?\}"
-			getCSS = re.search(regex, fileCSS).group(0)
-			newCSS += getCSS + "\n\n"
-		f.write(newCSS)
+		for itemCSSRemove in listCSSRemove: 
+			regex = "^" + itemCSSRemove + " \{(.|\n)*?\}"
+			fileCSS = re.sub(regex, "", fileCSS)
+			
+		print(fileCSS)
+		f.seek(0)
+		f.write(fileCSS)
 		f.close()
 		print("Removido as classes não utilizadas")
 	else:
