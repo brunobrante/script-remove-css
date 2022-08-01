@@ -14,5 +14,5 @@ listCSS = getClassesInCSS(pathCSS)
 # Comparo os dois e retorno somente as classes do HTML que estão sendo utilizada
 listCSSKeep = removeUnsedCSS(listCSS, listHTML)
 # Reescrevo o arquivo novamente
-rewriteFile(listCSSKeep, pathCSS)
+# rewriteFile(listCSSKeep, pathCSS)
 

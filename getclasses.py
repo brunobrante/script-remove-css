@@ -6,7 +6,7 @@ def getClassesInHTML(pathHTML):
 	fileHTML = openFileHTML.read()
 	openFileHTML.close()
 
-	regexJS = 'class="(.+?)"'
+	regexJS = 'className={(.+?)}'
 	allClassesHTML = re.findall(regexJS, fileHTML)
 
 	# Limpando as classes

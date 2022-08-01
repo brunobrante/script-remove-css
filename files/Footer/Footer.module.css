@@ -1,0 +1,50 @@
+.main_footer {
+	position: relative;
+	width: calc(100% - 300px);
+	left: 300px;
+	bottom: -90px;
+	height: 90px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: var(--color-dark-grey);
+	padding: 10px 0px;
+	text-align: center;
+}
+
+.footer_content_name {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin: 5px 0px;
+}
+
+.icon_company {
+	font-size: 25px;
+	border-radius: 1px;
+	border: 1px solid var(--color-regular-grey);
+	margin: 0px 10px;
+}
+
+.footer_content_name h1 {
+	font-size: 16px;
+	font-weight: normal;
+	font-family: "Segoe UI Light";
+}
+
+.footer_content_name h1 b {
+	font-family: "Segoe UI Bold";
+	color: var(--color-dark-grey);
+}
+
+@media (max-width: 72em) {
+	.main_footer {
+		width: 100%;
+		left: 0px;
+	}
+}
+
+/* @media (max-width: 62em) {}
+@media (max-width: 52em) {}
+@media (max-width: 32em) {} */

@@ -1,0 +1,508 @@
+.section_modal {
+	display: none;
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: hsla(0, 0%, 0%, 0.5);
+	justify-content: center;
+	align-items: center;
+}
+
+.modal_credit_card {
+	display: none;
+	width: 500px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0px 2px 6px hsla(0, 0%, 0%, 0.3);
+}
+
+.modal_content_header {
+	display: flex;
+	flex-direction: column;
+	padding: 10px 20px;
+	position: relative;
+	border: 1px solid transparent;
+	border-bottom-color: var(--color-regular-grey);
+}
+
+.modal_content_header h1 {
+	font-size: 20px;
+	color: var(--color-dark-grey);
+	margin: 10px 0px;
+}
+
+.modal_content_header h2 {
+	font-size: 18px;
+	color: var(--color-regular-grey);
+}
+
+.modal_content_header .icon_close_thinner {
+	font-size: 20px;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	cursor: pointer;
+	color: var(--color-dark-grey);
+}
+
+.modal_content_header .icon_close_thinner:hover {
+	color: var(--color-regular-green);
+}
+
+.modal_content_body {
+	width: 100%;
+	padding: 0px 10px;
+	margin-bottom: 10px;
+	max-height: 80vh;
+}
+
+.modal_content_body .message {
+	width: 100%;
+	border-radius: 5px;
+	font-size: 18px;
+	text-align: center;
+	font-family: "Segoe UI Semibold";
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.modal_content_body .message.error {
+	border: 2px solid #d32d2d;
+	color: #d32d2d;
+	padding: 5px 10px;
+	margin: 5px 0px;
+}
+
+.modal_content_body .message.warning {
+	border: 2px solid #39aed9;
+	color: #39aed9;
+	padding: 5px 10px;
+	margin: 5px 0px;
+}
+
+.modal_content_body .message.alert {
+	border: 2px solid #d3d32d;
+	color: #d3d32d;
+	padding: 5px 10px;
+	margin: 5px 0px;
+}
+
+.modal_content_body .message.success {
+	border: 2px solid var(--color-regular-green);
+	color: var(--color-regular-green);
+	padding: 5px 10px;
+	margin: 5px 0px;
+}
+
+.modal_content_body.content_view {
+	align-items: center;
+	padding: 10px 20px;
+}
+
+.modal_content_body form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+}
+
+.modal_item {
+	width: 100%;
+	margin: 5px 0px;
+	display: flex;
+	flex-direction: column;
+}
+
+.modal_content_body .modal_item.row h2 {
+	color: var(--color-regular-green);
+	font-size: 18px;
+	margin: 0px 5px;
+	text-align: start;
+	font-family: "Segoe UI Semibold";
+}
+
+.modal_content_body .modal_item .item_doubt {
+	align-items: center;
+}
+
+.modal_content_body .modal_item .item_doubt .content_doubt {
+	position: relative;
+	margin-left: 10px;
+}
+
+.modal_content_body .modal_item .item_doubt .content_doubt i {
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.modal_content_body .modal_item .item_doubt .content_doubt i:hover {
+	color: var(--color-regular-green);
+}
+
+.modal_content_body .modal_item .item_doubt .content_doubt p {
+	display: none;
+	position: absolute;
+	width: 200px;
+	height: auto;
+	margin: unset;
+	font-family: "Segoe UI Semibold";
+	right: 16px;
+	bottom: 16px;
+	background-color: var(--color-regular-green);
+	padding: 5px;
+	font-size: 12px;
+	border-radius: 5px;
+	color: white;
+	box-shadow: 0px 2px 6px hsla(0, 0%, 0%, 0.16);
+}
+
+.modal_content_body .modal_item h2 {
+	color: var(--color-regular-green);
+	font-size: 18px;
+	margin: 5px 0px;
+	text-align: start;
+	font-family: "Segoe UI Semibold";
+}
+
+.modal_content_body .modal_item p {
+	width: 100%;
+	color: var(--color-dark-grey);
+	font-size: 18px;
+	margin: 10px 0px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	word-break: break-word;
+}
+
+.modal_content_body .modal_item p.long_text {
+	white-space: normal;
+}
+
+.modal_content_body .modal_item p.scroll {
+	white-space: normal;
+	height: 120px;
+	overflow: auto;
+}
+
+.modal_content_body .content_text {
+	font-size: 18px;
+	width: 100%;
+	margin: 10px 0px;
+	text-align: center;
+	color: var(--color-dark-grey);
+}
+
+.modal_content_body input[type="checkbox"] {
+	width: 20px;
+	height: 20px;
+	margin: 0px 15px;
+}
+
+.modal_content_body input[type="text"],
+.modal_content_body input[type="password"] {
+	border: 1px solid var(--color-regular-grey);
+	border-radius: 5px;
+	font-size: 18px;
+	width: 100%;
+	padding: 5px;
+}
+
+.modal_content_body textarea {
+	width: 100%;
+	font-size: 18px;
+	border: 1px solid var(--color-regular-grey);
+	border-radius: 5px;
+	padding: 5px;
+	font-family: "Segoe Ui";
+}
+
+.modal_content_body select,
+.modal_content_body input[type="time"],
+.modal_content_body input[type="date"],
+.modal_content_body input[type="datetime-local"],
+.modal_content_body input[type="number"] {
+	border: 1px solid var(--color-regular-grey);
+	font-size: 15px;
+	padding: 5px;
+	color: var(--color-dark-grey);
+	border-width: 1px;
+	width: 100%;
+}
+
+/** INPUTS EM ROW **/
+.modal_credit_card .modal_row_item {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-end;
+	color: var(--color-dark-grey);
+	font-size: 18px;
+	margin: 5px 0px;
+	width: 100%;
+}
+
+.modal_row_item .modal_item,
+.modal_row_item.value.active .modal_item {
+	width: 48%;
+}
+
+/** INPUTS EM ROW QUE TEM QUE SELECIONAR UM CAMPO PARA APARECER O INPUT **/
+.modal_row_item.value .modal_item {
+	width: 100%;
+}
+
+.modal_row_item.value .modal_item:last-child {
+	display: none;
+}
+
+.modal_row_item.value.active .modal_item:last-child {
+	display: block;
+}
+
+.modal_credit_card .modal_column_item {
+	width: 100%;
+}
+
+.modal_credit_card .modal_column_item.active .modal_item:last-child {
+	display: block;
+}
+
+.modal_credit_card .modal_column_item .modal_item:last-child {
+	display: none;
+}
+
+.modal_credit_card .modal_column_item .modal_item:last-child h2 {
+	color: var(--color-dark-grey);
+}
+
+.modal_credit_card .content_buttons {
+	width: 100%;
+	justify-content: center;
+}
+
+.modal_credit_card button {
+	width: 150px;
+	margin: 10px 5px;
+}
+
+.modal_credit_card .content_check {
+	width: 100%;
+	font-size: 18px;
+	color: var(--color-dark-grey);
+	align-items: center;
+	margin: 10px 0px;
+	margin-left: 5px;
+	text-align: start;
+}
+
+.modal_credit_card .content_check input[type="checkbox"] {
+	margin: 0px 5px;
+}
+
+@media (max-width: 52em) {
+	.modal_credit_card {
+		width: 95% !important;
+		height: fit-content !important;
+	}
+}
+
+@media (max-width: 32em) {
+	.modal_content_header {
+		justify-content: center !important;
+		align-items: center !important;
+		text-align: center !important;
+	}
+
+	.modal_content_header h1 {
+		font-size: 18px !important;
+		margin: 10px 10px !important;
+	}
+
+	.modal_content_header h2 {
+		font-size: 15px !important;
+	}
+
+	.modal_content_header .ico-close {
+		width: 25px !important;
+		height: 25px !important;
+	}
+
+	.modal_content_body {
+		max-height: 60vh !important;
+	}
+
+	.modal_content_body .modal_item .item_doubt {
+		justify-content: flex-end;
+		flex-direction: row-reverse;
+	}
+
+	.modal_content_body .modal_item .item_doubt .content_doubt {
+		margin-left: 0px;
+		margin-right: 10px;
+	}
+}
+
+.modal_credit_card .credit_card {
+	width: 90%;
+	background-color: #373737;
+	border: 5px solid var(--color-regular-grey);
+	border-radius: 20px;
+	color: white;
+	position: relative;
+	max-width: 420px;
+}
+
+.modal_credit_card .front_credit_card {
+	width: 100%;
+	padding: 0px 20px;
+	height: 220px;
+}
+
+.modal_credit_card .front_credit_card .icon_chip {
+	border: 1px solid white;
+	width: 20%;
+	height: 20%;
+	margin: 20px 0px;
+}
+
+.modal_credit_card .front_credit_card .card_number {
+	font-size: 26px;
+	margin: 20px 0px;
+}
+
+.modal_credit_card .front_credit_card .content_validate {
+	margin: 20px 0px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal_credit_card .front_credit_card .text_validate {
+	width: 50px;
+	text-align: end;
+	margin: 0px 10px;
+	font-size: 12px;
+}
+
+.modal_credit_card .front_credit_card .date_validate {
+	font-size: 20px;
+}
+
+.modal_credit_card .front_credit_card .card_name {
+	margin: 20px 0px;
+	font-size: 22px;
+	max-width: 75%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.modal_credit_card .front_credit_card .icon_operator {
+	border: 1px solid white;
+	width: 20%;
+	height: 20%;
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+}
+
+/** Cartão atrás **/
+.modal_credit_card .back_credit_card {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	height: 220px;
+	display: none;
+}
+
+.modal_credit_card .back_credit_card .style_magnet {
+	width: 100%;
+	height: 20%;
+	background-color: #8e8b8b;
+	margin: 20px 0px;
+}
+
+.modal_credit_card .back_credit_card .content_cvv {
+	display: flex;
+	flex-direction: row;
+	height: 18%;
+	width: 60%;
+	margin: 20px 0px;
+}
+
+.modal_credit_card .back_credit_card .style_cvv {
+	background-color: #262626;
+	height: 100%;
+	width: 75%;
+}
+
+.modal_credit_card .back_credit_card .number_cvv {
+	width: 25%;
+	height: 100%;
+	background-color: var(--color-dark-grey);
+	color: white;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+}
+
+.modal_credit_card .back_credit_card .icon_operator {
+	border: 1px solid white;
+	width: 18%;
+	height: 20%;
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
+}
+
+@media (max-width: 32em) {
+	.modal_credit_card .credit_card {
+		width: 100%;
+	}
+
+	.modal_credit_card .front_credit_card {
+		height: 180px;
+	}
+
+	.modal_credit_card .back_credit_card {
+		height: 180px;
+	}
+
+	.modal_credit_card .front_credit_card .icon_chip {
+		height: 25px;
+		width: 40px;
+		margin-bottom: 10px;
+	}
+
+	.modal_credit_card .front_credit_card .card_number {
+		font-size: 18px;
+		margin: 10px 0px;
+	}
+
+	.modal_credit_card .front_credit_card .content_validate {
+		margin: 10px 0px;
+	}
+
+	.modal_credit_card .front_credit_card .date_validate {
+		font-size: 16px;
+	}
+
+	.modal_credit_card .front_credit_card .card_name {
+		margin: 10px 0px;
+		font-size: 16px;
+	}
+
+	.modal_credit_card .front_credit_card .icon_operator {
+		height: 35px;
+		width: 50px;
+	}
+}
